@@ -1,0 +1,178 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+}
+
+
+.body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: var(--light-blue-300);
+}
+
+
+.body .header {
+    display: flex;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.body .header .logo {
+    object-fit: contain;
+}
+
+.body .main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    padding-bottom: 5rem;
+}
+
+.main .encrypt {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.main .encrypt-input {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    font-size: 2.0rem;
+    color: var(--dark-blue-200);
+    background-color: var(--light-blue-300);
+    flex: 1;
+}
+
+.main .encrypt-input::placeholder {
+    color: var(--dark-blue-200);
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.main .encrypt .controls {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 1rem;
+}
+
+.main .encrypt .controls .buttons {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .encrypt .controls .alert {
+    display: none;
+    align-items: center;
+}
+
+.main .encrypt .controls .alert .alert-text {
+    font-size: 0.7rem;
+}
+.main .encrypt .controls .alert .alert-img {
+    width: 1rem;
+}
+
+.main .decrypt {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 5rem;
+    padding: 1rem;
+    background-color: #fff;
+}
+
+.main .decrypt .none-decrypted {
+    display: flex;
+    flex-direction: column;
+    text-wrap: balance;
+    text-align: center;
+}
+
+.main .decrypt .none-decrypted .none-decrypted-img {
+    width: 100%;
+}
+.main .decrypt .none-decrypted .none-decrypted-text {
+    font-size: 1.5rem;
+}
+
+.main .decrypt .none-decrypted .none-decrypted-subtext {
+    font-size: 0.8rem;
+    color: var(--gray-400);
+}
+
+.main .decrypt .decrypt-output {
+    display: none;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 1rem 1rem 1rem;
+}
+
+.main .decrypt .decrypt-output .decrypt-output-text {
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    font-size: 2.0rem;
+    color: var(--gray-400);
+    text-wrap: balance;
+    width: 100%;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background-color: var(--light-blue-300);
+    color: var(--gray-400);
+    flex-shrink: 0;
+}
+
+.footer .footer-text {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    gap: 0.5rem;
+}
+
+.footer .footer-link {
+    color: var(--gray-400);
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    .body .main {
+        grid-template-columns: 1fr;
+    }
+    
+    .body .header {
+        justify-content: center;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .main .decrypt {
+        border-radius: none;
+    }
+}
